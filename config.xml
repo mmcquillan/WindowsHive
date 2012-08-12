@@ -1,0 +1,13 @@
+<job name="Example Job" schedule="">
+
+  <onError></onError>
+  <onSuccess></onSuccess>
+  <onRetry></onRetry>
+
+  <exec name="Print a message" retry="1" threads="1" enabled="true">
+
+    <message>Hello world!</message>
+    
+  </exec>
+
+</job>

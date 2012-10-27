@@ -1,13 +1,15 @@
-<job name="Example Job" schedule="">
+<exec name="Example Job" default="Run Me" onError="" onSuccess="" onRetry="">
 
-  <onError></onError>
-  <onSuccess></onSuccess>
-  <onRetry></onRetry>
+  <job name="Run Me" retry="1" threads="1" enabled="true">
+    <message>Hello world!</message>   
+  </job>
 
-  <exec name="Print a message" retry="1" threads="1" enabled="true">
-
+  <job name="Run You" retry="1" threads="1" enabled="true">
     <message>Hello world!</message>
-    
-  </exec>
+  </job>
 
-</job>
+  <job name="Run Anything" retry="1" threads="1" enabled="true">
+    <message>Hello world!</message>
+  </job>
+
+</exec>

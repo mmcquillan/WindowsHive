@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
+using System.Xml;
 
 namespace MultiExec
 {
 	class Exec
 	{
 
-        private string Source;
-        private string SQL;
+        private XmlNode command;
 
-        public Exec(string source, string sql)
+        public Exec(XmlNode node)
         {
-            Source = source;
-            SQL = sql;
+            command = node;
         }
 
 		public void Run(Object obj)
@@ -25,30 +22,17 @@ namespace MultiExec
             try
             {
 
-                // needed vars
-                SqlCommand cmd;
-
-                // open connection to source
-                SqlConnection sourceconn = new SqlConnection(Source);
-                sourceconn.Open();
-
-                // execute the statement
-                cmd = new SqlCommand(SQL, sourceconn);
-                cmd.CommandTimeout = 3600;
-                cmd.ExecuteNonQuery();
-
-                // clean up connections
-                sourceconn.Close();
+                Console.WriteLine(command.OuterXml);
 
                 // feedback
                 DateTime stopTime = DateTime.Now;
                 TimeSpan duration = stopTime - startTime;
-                Console.WriteLine("+" + String.Format("{0,10:0.000}", duration.TotalSeconds) + "s " + SQL);
+                Console.WriteLine("+" + String.Format("{0,10:0.000}", duration.TotalSeconds) + "s ");
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("! ERROR: " + SQL + " " + ex.Message);
+                Console.WriteLine("! ERROR: " + ex.Message);
                 Program.Success = false;
             }
             

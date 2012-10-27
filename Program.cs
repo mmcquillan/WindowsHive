@@ -63,8 +63,8 @@ namespace MultiExec
                         // loop over the command
                         foreach (XmlNode item in job)
                         {
-                            //Exec exec = new Exec(job.Attributes["source"].Value, item.InnerText);
-                            //threads.QueueUserWorkItem(new WaitCallback(exec.Run));
+                            Exec exec = new Exec(item);
+                            threads.QueueUserWorkItem(new WaitCallback(exec.Run));
                         }
 
                         // wait for all threads to complete

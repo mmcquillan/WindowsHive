@@ -21,38 +21,31 @@ namespace MultiExec
             // collect stats
             DateTime startTime = DateTime.Now;
 
-
-            // open settings file
-            XmlDocument settings = new XmlDocument();
-            if (args.Length == 1)
-            {
-                settings.Load(args[0]);
-                Console.WriteLine("[ Job: " + settings.DocumentElement.Attributes["name"].Value + " ]");
-            }
-            // else no settings file and quit
-            else
+            // check for input
+            if (args.Length != 1)
             {
                 Console.WriteLine("EXITING WITH ERROR! No settings file supplied");
                 Console.WriteLine(" mex.exe <file.xml>");
                 Environment.Exit(1);
             }
 
+            // job parser
+            JobParser jobParser = new JobParser(args[0]);
+            Console.WriteLine(jobParser.Name);
 
-            // loop over the commands
-            foreach (XmlNode job in settings["job"])
+            // loop over jobs
+            foreach (Job job in jobParser.Jobs)
             {
-
-                // make sure we are in a success state
-                if (Program.Success && job.Name == "exec")
+                if (Program.Success)
                 {
 
                     // collect stats
                     DateTime cmdStartTime = DateTime.Now;
 
                     // feedback to console
-                    Console.WriteLine("");
-                    Console.WriteLine(job.Attributes["name"].Value);
+                    Console.WriteLine("--" + job.Name);
 
+                    /*
                     // create a threadpool
                     ThreadPoolWait threads = new ThreadPoolWait();
                     
@@ -81,6 +74,7 @@ namespace MultiExec
                         Console.WriteLine("! ERROR: Incorrect Config XML format.");
                         Program.Success = false;
                     }
+                    */
                 }
 
             }

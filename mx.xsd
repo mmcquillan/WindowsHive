@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="mx" targetNamespace="http://tempuri.org" elementFormDefault="qualified" xmlns="http://tempuri.org/mx.xsd" xmlns:mstns="http://tempuri.org/mx.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="mx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="job" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="retry" type="xs:integer" use="optional" default="0"/>
+            <xs:attribute name="threads" type="xs:integer" use="optional" default="1"/>
+            <xs:attribute name="enabled" type="xs:boolean" use="optional" default="true"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:attribute name="default" type="xs:string" use="required"/>
+      <xs:attribute name="onError" type="xs:string" use="optional" default=""/>
+      <xs:attribute name="onSuccess" type="xs:string" use="optional" default=""/>
+      <xs:attribute name="onRetry" type="xs:string" use="optional" default=""/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

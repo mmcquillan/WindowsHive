@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiExec", "MultiExec.csproj", "{E0A82416-0E58-477B-B7BA-3532DB397773}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hive", "Hive.csproj", "{E0A82416-0E58-477B-B7BA-3532DB397773}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

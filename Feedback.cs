@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MultiExec
+namespace WindowsHive
 {
     class Feedback
     {

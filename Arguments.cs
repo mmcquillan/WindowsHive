@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 
 
-namespace MultiExec
+namespace WindowsHive
 {
     /// from: http://jake.ginnivan.net/c-sharp-argument-parser
 

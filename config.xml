@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mx name="Example Job" default="Run Me" xmlns="http://tempuri.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<hive name="Example Job" default="Run Me" xmlns="http://tempuri.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <job name="Run Me" retry="1" threads="1" enabled="true">
     <message>Hello world!</message>   
@@ -13,4 +13,4 @@
     <message>Hello world!</message>
   </job>
 
-</mx>
+</hive>

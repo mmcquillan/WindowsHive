@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Collections;
 
-namespace MultiExec
+namespace WindowsHive
 {
     /// <summary>ThreadPool utility class that allows for easily waiting on queued delegates.</summary>
     public class ThreadPoolWait : IDisposable

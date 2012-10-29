@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="mx" targetNamespace="http://tempuri.org" elementFormDefault="qualified" xmlns="http://tempuri.org/mx.xsd" xmlns:mstns="http://tempuri.org/mx.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="mx">
+<xs:schema id="mx" targetNamespace="http://tempuri.org" elementFormDefault="qualified" xmlns="http://tempuri.org/hive.xsd" xmlns:mstns="http://tempuri.org/hive.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="hive">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="job" maxOccurs="unbounded">

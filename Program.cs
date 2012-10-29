@@ -3,7 +3,7 @@ using System.Xml;
 using System.IO;
 using System.Threading;
 
-namespace MultiExec
+namespace WindowsHive
 {
 
     class Program
@@ -25,7 +25,7 @@ namespace MultiExec
             if (args.Length != 1)
             {
                 Console.WriteLine("EXITING WITH ERROR! No settings file supplied");
-                Console.WriteLine(" mex.exe <file.xml>");
+                Console.WriteLine(" hive.exe <file.xml>");
                 Environment.Exit(1);
             }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml;
 
-namespace MultiExec
+namespace WindowsHive
 {
 	class Exec
 	{

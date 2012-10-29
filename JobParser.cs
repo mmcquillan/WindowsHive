@@ -5,14 +5,14 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace MultiExec
+namespace WindowsHive
 {
     class JobParser
     {
 
         // private methods
         private const string xns = "http://tempuri.org";
-        private const string xsd = "mx.xsd";
+        private const string xsd = "hive.xsd";
         private XmlDocument jobsXML;
 
         // public methods
@@ -66,7 +66,7 @@ namespace MultiExec
 
         private void ParseJobs()
         {
-            foreach (XmlNode jobNode in jobsXML["mx"])
+            foreach (XmlNode jobNode in jobsXML["hive"])
             {
                 Job job = new Job();
                 job.Name = jobNode.Attributes["name"].Value;

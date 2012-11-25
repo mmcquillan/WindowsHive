@@ -9,6 +9,39 @@ namespace WindowsHive
     class Program
     {
 
+        /* stash away for self installed service
+        http://stackoverflow.com/questions/1449994/inno-setup-for-windows-service/1450051#1450051
+        using System;
+        using System.Collections.Generic;
+        using System.Configuration.Install; 
+        using System.IO;
+        using System.Linq;
+        using System.Reflection; 
+        using System.ServiceProcess;
+        using System.Text;
+        
+        static void Main(string[] args)
+        {
+            if (System.Environment.UserInteractive)
+            {
+                string parameter = string.Concat(args);
+                switch (parameter)
+                {
+                    case "--install":
+                        ManagedInstallerClass.InstallHelper(new string[] { Assembly.GetExecutingAssembly().Location });
+                        break;
+                    case "--uninstall":
+                        ManagedInstallerClass.InstallHelper(new string[] { "/u", Assembly.GetExecutingAssembly().Location });
+                        break;
+                }
+            }
+            else
+            {
+                ServiceBase.Run(new WindowsService());
+            }
+        }
+        */
+
         // public to keep track of errors
         public static bool Success = true;
         public static int Threads = 0;
